@@ -20,6 +20,9 @@ public class calculator {
             }else{
                 System.out.println("Division of two numbers is : "+(a/b));
             }
+            break;
+
+            default: System.out.println("Enter valid operation ");
 
         }
     }
