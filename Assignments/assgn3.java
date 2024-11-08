@@ -16,8 +16,8 @@ public class assgn3 {
 
         System.out.println("The total price of the items is : "+tp);
 
-        float SGST = tp+(tp*0.18);
-        float CGST = tp+(tp*0.18);
+        float SGST = tp+(tp*18/100);
+        float CGST = tp+(tp*18/100);
 
         float tp2 = tp+SGST+CGST;
 
