@@ -19,9 +19,8 @@ public class calculator {
                 System.out.println("Dividing by zero");
             }else{
                 System.out.println("Division of two numbers is : "+(a/b));
-            }
-            break;
-
+            } break;
+            case '%' : System.out.println("Modulo of two numbers is : "+(a%b)); break;
             default: System.out.println("Enter valid operation ");
 
         }
