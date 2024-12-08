@@ -10,7 +10,7 @@ class Solution {
                 return true;
             }
 
-            if(nums[low] == nums[mid] & nums[mid] == nums[high]){
+            if(nums[low] == nums[mid] && nums[mid] == nums[high]){
                 low = low+1;
                 high = high - 1;
                 continue;
