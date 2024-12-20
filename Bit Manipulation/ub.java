@@ -12,11 +12,15 @@ public class ub {
     }
 
     public static int updateithBit(int n, int i, int newBit){
-        if(newBit == 0){
-            return clearithBit(n, i);
-        }else{
-            return setithBit(n, i);
-        }
+        // if(newBit == 0){
+        //     return clearithBit(n, i);
+        // }else{
+        //     return setithBit(n, i);
+        // }
+
+        n = clearithBit(n, i);
+        int bitMask = newBit<<i;
+        return n | bitMask;
     }
 
     public static void main(String[] args) {
