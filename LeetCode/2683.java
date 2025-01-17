@@ -14,3 +14,15 @@ class Solution {
         return derived[n-1] == (original[n-1] ^ original[0]);
     }
 }
+
+// class Solution {
+//     public boolean doesValidArrayExist(int[] derived) {
+//         int xor = 0;
+//         int n = derived.length;
+//         for(int i=0; i<n; i++){
+//             xor ^= derived[i];
+//         }
+//         return xor ==0 ;
+//     }
+// }
+//Discussion approach
