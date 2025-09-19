@@ -46,7 +46,7 @@ public class LinkedList {
 
         Node newNode = new Node(data);
         size++;
-        
+
         Node temp = head;
         int i = 0;
         while(i < index - 1){
@@ -63,6 +63,60 @@ public class LinkedList {
             System.out.println(temp.data);
             temp = temp.next;
         }
+    }
+
+    public int removefirst(){
+        if(size == 0){
+            return Integer.MIN_VALUE;
+        }else if(size == 1){
+            int val = head.data;
+            head = tail = null;
+            size = 0;
+            return val;
+        }
+
+        int val = head.data;
+        head = head.next;
+        size--;
+        return val;
+    }
+
+    public int removelast(){
+        if(size == 0){
+            return Integer.MIN_VALUE;
+        }else if(size == 1){
+            int val = head.data;
+            head = tail = null;
+            size = 0;
+            return val;
+        }
+
+        Node temp = head;
+        while(temp.next.next != null){
+            temp = temp.next;
+        }
+
+        int val = temp.next.data;
+        temp.next = null;
+        size--;
+        tail = temp;
+        return val;
+    }
+
+    public int search(int key){
+        if(size == 0){
+            return -1;
+        }
+        Node temp = head;
+        int i=0;
+        while(temp != null){
+            if(temp.data == key){
+                return i;
+            }
+            temp = temp.next;
+            i++;
+        }
+        return -1;
     }
     public static void main(String[] args) {
         LinkedList sll = new LinkedList();
