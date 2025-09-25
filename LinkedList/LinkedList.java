@@ -153,6 +153,45 @@ public class LinkedList {
 
         head = prev;
     }
+
+    public void deletenthnodefromend(int n){
+        // Edge cases
+        if(head == null || n <= 0) return;
+        
+        int sz = 0;
+        Node temp = head;
+        while(temp != null){
+            temp = temp.next;
+            sz++;
+        }
+
+        // If n is greater than size
+        if(n > sz) return;
+
+        if(n == sz){
+            head = head.next;
+            size--;
+            if(head == null) tail = null; // List becomes empty
+            return;
+        }
+
+        Node prev = head;
+        int idx = 1;
+        while(idx < (sz - n)){
+            prev = prev.next;
+            idx++;
+        }
+
+        Node nodeToDelete = prev.next;
+        prev.next = prev.next.next;
+        
+        // Update tail if we deleted the last node
+        if(nodeToDelete.next == null){
+            tail = prev;
+        }
+        
+        size--;
+    }
     public static void main(String[] args) {
         LinkedList sll = new LinkedList();
         sll.addFirst(1);
