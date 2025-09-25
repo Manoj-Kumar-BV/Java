@@ -1,6 +1,7 @@
 public class c {
     public static void main(String[] args) {
         Student s1 = new Student();
+        Student s2 = new Student(s1);
     }
 }
 
@@ -9,6 +10,10 @@ class Student{
     String roll;
 
     Student(){
-        System.out.println("Comnstructor is called...");
+    }
+
+    Student(Student s1){
+        this.name = s1.name;
+        this.roll = s1.roll;
     }
 }
